@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="idv.liucheyu.dataservice.mapper.ProductInfoMapper">
+    <!-- ProductInfo getProductInfoListByMainClass(String mainClass); -->
+    <select id="getProductInfoListByMainClass" resultType="idv.liucheyu.dataservice.entity.ProductInfo">
+        select * from product_info where main_class = #{mainClass};
+    </select>
+</mapper>

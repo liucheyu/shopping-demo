@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="idv.liucheyu.productapi.mapper.ProductInfoMapper">
+    <!-- ProductInfo getProductInfoListByMainClass(String mainClass); -->
+    <select id="getProductInfoListByMainClass" resultType="idv.liucheyu.productapi.entity.ProductInfo">
+        select * from product_info where main_class = #{mainClass};
+    </select>
+    <!--    boolean addProductInfo();-->
+    <insert id="addProductInfo" parameterType="idv.liucheyu.productapi.entity.ProductInfo">
+        insert into product_info (product_id,product_name,currency_code,main_class,last_class,trade_name,size_unit,weight_unit,product_createtime)
+        values (#{product_id},#{product_name},#{currency_code},#{main_class},#{last_class},#{trade_name},#{size_unit},#{weight_unit},#{product_createtime})
+    </insert>
+</mapper>
